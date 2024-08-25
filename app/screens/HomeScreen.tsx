@@ -11,6 +11,7 @@ import {
   Linking,
   Modal,
   StyleSheet,
+  RefreshControl,
 } from "react-native";
 import tw from "twrnc";
 import Feather from "@expo/vector-icons/Feather";
@@ -23,6 +24,7 @@ import {
 
 const ShipmentScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const toggleFilter = (filter) => {
     setActiveFilters((prev) =>
       prev.includes(filter)
@@ -298,6 +300,14 @@ const ShipmentScreen = () => {
         renderItem={({ item }) => <ShipmentItem {...item} />}
         keyExtractor={(item) => item.id}
         contentContainerStyle={tw`px-4`}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={()=>{
+          setRefreshing(true);
+          alert('refreshing');
+          setTimeout(()=>{
+            setRefreshing(false)
+          }, 3000)
+
+        }} />}
       />
 
       <View style={tw`flex-row justify-around py-2 border-t border-gray-200`}>
