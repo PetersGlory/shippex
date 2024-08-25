@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Shippex",
+    "slug": "shippex",
+    "version": "2.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#FFFFFF"
+    },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
+        }
+      ],
+      "expo-build-properties"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shippex.Shippex",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Allow $(PRODUCT_NAME) to use Face ID."
+      },
+      "buildNumber": "11"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.shippex.Shippex",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.NOTIFICATIONS",
+        "android.permission.USE_BIOMETRIC"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/adaptive-icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e934bece-99f6-4e22-97c8-54a737d6df69"
+      }
+    },
+    "owner": "peter2200"
+  }
+}
